@@ -1,0 +1,61 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+:root {
+    /* --color-one :#FF8484;
+    --color-two:#F7D9C4;
+    --color-text:#232323;
+    --bg-2 : #DCE8EB;
+    --bg-1 :#EFEFEF;
+
+*/
+     --font: "DM Sans", sans-serif; 
+
+}
+body {
+    overflow-x: hidden;
+font-family: var(--font);
+}
+*{
+    box-sizing: border-box;
+
+}
+
+/* căn hai bên  */
+.container{
+    width: 100%;
+    max-width: 1680px;
+    margin-left: 10px auto;
+    margin-right: 10px auto;
+}
+a{
+    text-decoration: none;
+}
+@media  (max-width :1200px ){
+    .container{
+        max-width: 960px;
+    }
+    
+}
+@media  (max-width :992px ){
+    .container{
+        max-width: 720px;
+    }
+    
+}
+@media  (max-width :768px ){
+    .container{
+        max-width: 840px;
+    }
+    
+}
+@media  (max-width :576px ){
+    .container{
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}

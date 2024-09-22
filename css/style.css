@@ -1,0 +1,664 @@
+/* Header chính */
+.header {
+    background-color: black;
+    color: white;
+    z-index: 1;
+    width: 100%;
+    
+    
+}
+
+.container .inner-wrap  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+   
+}
+
+.inner-content {
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+.inner-content li {
+    list-style: none;
+}
+
+.vanchuyen {
+    color: white;
+    text-decoration: none;
+}
+
+.inner-gioithieu ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: 2px;
+   
+}
+
+.inner-gioithieu ul li {
+    margin-right: 10px;
+
+}
+
+.inner-gioithieu ul li a {
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.inner-social ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.inner-social ul li {
+    margin-right: 10px;
+}
+
+.inner-social ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.inner-social ul li a:hover {
+    color: #f8f8f8;
+}
+
+/* Header phần logo và menu */
+
+.inner-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Hoặc chiều rộng cụ thể nếu cần */
+    height: 73px;
+}
+
+.inner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.inner-logo img {
+    height: 100px;
+    width: 160px;
+}
+
+.title-logo {
+    font-size: 20px;
+    margin-left: auto;
+    font-weight: bold;
+
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase; /* Viết hoa tất cả chữ cái */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+ul>li{
+    float: left;
+    margin-right: 15px;
+}
+.navbar ul li {
+    position: relative;
+    /* margin-right: 20px; */
+}
+
+.navbar ul li a {
+    font-weight: bolder;
+    text-decoration: none;
+    padding-right: 10px;
+    display: block;
+    color: rgba(186, 182, 182, 0.875);
+   
+}
+.navbar ul li a:hover {
+    color: rgb(126, 124, 124);
+}
+/* Đảm bảo danh mục con bị ẩn mặc định */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    z-index: 1000;
+    width: 200px;
+    opacity: 0; /* Bắt đầu với độ trong suốt */
+    transform: translateY(20px); /* Dịch xuống một chút để tạo hiệu ứng trượt lên */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động */
+    border-radius: 5px;
+}
+
+/* Khi di chuột vào danh mục cha thì hiển thị danh mục con */
+.navbar ul li:hover .submenu {
+    display: block;
+    opacity: 1; /* Hiển thị danh mục con với độ trong suốt 1 */
+    transform: translateY(0); /* Đưa danh mục con lên đúng vị trí */
+}
+/* Khi di chuột vào một mục trong danh mục con */
+.submenu li:hover a {
+    color: black; /* Đổi màu chữ thành màu đen */
+    transition: color 0.3s ease; /* Thêm hiệu ứng mượt mà khi đổi màu */
+}
+
+/* Đảm bảo danh mục cha có vị trí tương đối để danh mục con nằm chính xác */
+.navbar ul li {
+    position: relative;
+}
+
+/* Tạo độ rộng và chiều cao cho menu cha để chuột có thể di chuyển dễ dàng */
+.navbar ul li > a {
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+
+/* Giỏ hàng */
+.cart {
+    margin-left: 20px;
+}
+
+.cart a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 20px;
+}
+.cart a:hover {
+    color: rgb(255, 196, 0);
+}
+
+/* Tìm kiếm */
+.search {
+    margin-left: 20px;
+}
+
+.search input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px;
+}
+
+.search input::placeholder {
+    color: #888;
+}
+
+/* Thêm vào style.css */
+.image {
+    top: 0; /* Đặt ở góc trên bên trái */
+    left: 0;
+    width: 100vw; /* Chiếm toàn bộ chiều rộng của màn hình */
+    height: 100vh; /* Chiếm toàn bộ chiều cao của màn hình */
+    background-image: url('/images/1-22.jpg'); /* Đặt đường dẫn đến ảnh của bạn */
+    background-size: cover; /* Đảm bảo ảnh bao phủ toàn bộ khu vực */
+    background-position: center; /* Căn giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    z-index: -1; /* Đặt dưới các phần tử khác, như header */
+    animation: zoom 10s infinite; /* Thêm hiệu ứng phóng to và thu nhỏ */
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Đặt dưới ảnh và các phần tử khác */
+}
+
+.header, .navbar {
+    position: relative;
+    z-index: 1; /* Đặt trên lớp overlay và ảnh */
+}
+.title{
+   text-align: center;
+   align-items: center;
+   color: black;
+   padding-top: 330px;
+}
+.contact {
+    margin-top: 30px;
+    border-radius: 30px;
+    padding: 10px 29px;
+    font-size: 20px;
+    background-color: #f7de51;
+    border: 0;
+    color: black;
+}
+.contact:hover {
+    margin-top: 30px;
+    border-radius: 30px;
+    padding: 10px 29px;
+    font-size: 22px;
+    background-color: white;
+    color:black;
+    border: #f8f8f8;
+    cursor: pointer; /* Hình bàn tay khi hover */
+    
+}
+
+/* noidung */
+.section-one{
+   display: flex;
+   margin-top: 100px;
+   margin-bottom: 100px;
+   background-color: white;
+ 
+}
+.section-one {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.inner-wrap {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các khối ảnh */
+}
+
+.inner-gioithieu1 {
+    position: relative;
+    width: 360px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 5px;
+    
+}
+
+.phong {
+    position: relative;
+    width: 360px;
+    height: 220px;
+    cursor: pointer;
+    border: 3px solid #e4b011; /* Đường viền mặc định cho khối */
+    overflow: hidden;
+    transition: border 0.5s ease, transform 0.5s ease; /* Hiệu ứng cho border và phóng to */
+}
+
+
+.phong img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease; /* Hiệu ứng phóng to ảnh */
+}
+
+.phong::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(181, 176, 176) 50%, rgb(99, 54, 54) 50%); /* Đường chéo phân chia */
+    z-index: 2;
+    transition: all 0.5s ease;
+    opacity: 0.6; /* Độ mờ của lớp phủ */
+    pointer-events: none; /* Đảm bảo lớp phủ không chặn tương tác chuột */
+}
+
+.phong h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ; /* Nghiêng chữ và căn giữa */
+    color:black;
+    font-size: 20px;
+    z-index: 3; /* Đảm bảo chữ nằm trên lớp phủ */
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
+.phong:hover {
+    border: 3px solid #000000; /* Thêm viền đen khi di chuột vào */
+}
+
+.phong:hover img {
+    transform: scale(1.2); /* Phóng to ảnh khi di chuột vào */
+}
+
+.phong:hover::before {
+    transform: translateX(-100%); /* Lớp phủ dịch sang bên trái khi hover */
+}
+
+.phong:hover h2 {
+    transform: translate(150%, -50%) rotate(10deg); /* Lùi chữ về bên phải và nghiêng chữ khi hover */
+    opacity: 0; /* Chữ mờ dần khi hover */
+}
+/* sectoin-two */
+.inner-title {
+    text-align: center;
+    justify-content: center;
+}
+.inner-wrap-1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.inner-box {
+    color: #000000;
+    text-align: center;
+    position: relative;
+    width: 200px; /* Chiều rộng của inner-box */
+    height: 130px; /* Chiều cao của inner-box */
+    border: 2px solid transparent; /* Border mặc định */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box-shadow mặc định */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi */
+    overflow: hidden; /* Ẩn phần vượt ra ngoài */
+}
+
+
+.inner-box::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Đặt dưới border */
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: orange; /* Màu gạch cam dưới border */
+    transform: scaleX(0);
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi cho gạch cam */
+}
+.inner-box:hover {
+    border: 2px solid orange; /* Border nổi khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Box-shadow nổi khi hover */
+}
+
+.inner-box:hover::after {
+    transform: scaleX(1); /* Hiệu ứng hiện gạch cam khi hover */
+}
+.inner-box1 img {
+margin-top: 15px;
+}
+
+/* section Three */
+.product-container-1 , .product-container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Khoảng cách giữa các hộp sản phẩm */
+    justify-content: space-around;
+    padding-left: 0; /* Khoảng cách bên trái = 0 */
+    padding-right: 0; /* Khoảng cách bên phải = 0 */
+    padding-top: 30px;
+    width: 100%;
+}
+
+.product-box {
+    position: relative;
+    width: 230px; /* Chiều rộng của mỗi hộp sản phẩm */
+    border: 1px solid #ddd; /* Đường viền của hộp sản phẩm */
+    border-radius: 8px; /* Bo góc hộp sản phẩm */
+    overflow: hidden; /* Ẩn phần vượt ra ngoài */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bóng nhẹ */
+    transition: box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi cho bóng */
+}
+
+.product-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Bóng nổi khi hover */
+}
+
+.product-image {
+    position: relative;
+    margin: 5px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 240px;
+    border-radius: 5px;
+}
+
+.discount-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    /* display: none; Ẩn biểu tượng giảm giá mặc định */
+}
+
+.product-box:hover .discount-icon {
+    /* display: block; Hiện biểu tượng giảm giá khi hover nếu có */
+}
+
+.product-details {
+    padding: 3px 15px 15px 15px;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 14px;
+    color: #b3b1b1;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.product-name {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 16px;
+    color: rgb(176, 3, 3);
+    margin: 10px 0;
+    font-weight: 700;
+    margin-bottom: 30px;
+
+}
+
+.add-to-cart {
+    background-color: #e7bf0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Đặt nút vào vị trí tuyệt đối trong product-box */
+    bottom: 10px; /* Cách đáy 5px */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%); /* Đảm bảo nút được căn giữa */
+    white-space: nowrap; /* Không cho phép chữ ngắt dòng */
+    text-align: center;  /* Căn giữa chữ */
+    display: inline-block; /* Đảm bảo chiều rộng của nút đủ cho chữ */
+}
+
+.add-to-cart:hover {
+    background-color: #b19828; /* Thay đổi màu nền khi hover */
+}
+
+/* section-four */
+.section-four {
+    background-color:#f8f8f8;
+}
+.section-four .inner-title {
+    padding-top: 30px;
+}
+h4.tab {
+    color: orange; /* Chỉnh màu chữ thành cam */
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+h4.tab::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Vị trí dòng gạch chân cách chữ 5px */
+    height: 2px; /* Độ dày của dòng gạch chân */
+    background-color: orange; /* Màu của dòng gạch chân */
+    width: 100%; /* Độ rộng của dòng gạch chân bằng với độ rộng chữ */
+}
+/* end section-four */
+.tim-hieu {
+    background-color: white;
+    padding: 40px 0;
+}
+.tim-hieu .container {
+    display: flex;
+}
+.inner-wrap-text{
+    width: 600px;
+}
+.inner-wrap-text .title-1{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.inner-wrap-text .title-1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Vị trí dòng gạch chân cách chữ 5px */
+    height: 3px; /* Độ dày của dòng gạch chân */
+    background-color: orange; /* Màu của dòng gạch chân */
+    width: 100%; /* Độ rộng của dòng gạch chân bằng với độ rộng chữ */
+}
+.inner-wrap-text .tim-hieu-1 {
+    position: relative; /* Để pseudo-element được định vị chính xác */
+    margin-top: 30px;
+    padding: 10px;
+    color: black; /* Màu chữ ban đầu */
+    overflow: hidden; /* Ẩn phần nền không cần thiết */
+    z-index: 0; /* Đặt chữ ở phía trên cùng */
+}
+
+.inner-wrap-text .tim-hieu-1::before {
+    content: ""; /* Tạo một pseudo-element */
+    position: absolute;
+    top: 0;
+    left: -100%; /* Bắt đầu ở bên trái ngoài vùng nhìn */
+    width: 100%; /* Chiều rộng bằng với phần tử chính */
+    height: 100%; /* Chiều cao bằng với phần tử chính */
+    background-color: orange; /* Màu nền khi hover */
+    transition: left 0.5s; /* Hiệu ứng chuyển tiếp cho vị trí */
+    z-index: -1; /* Đặt pseudo-element ở phía dưới */
+}
+
+.inner-wrap-text .tim-hieu-1:hover::before {
+    left: 0; /* Di chuyển vào vùng nhìn khi hover */
+}
+
+.inner-wrap-text .tim-hieu-1:hover {
+    color: white; /* Màu chữ khi hover */
+    border: 0;
+}
+
+.inner-wrap-img img{
+    width: 620px;
+    height: 340px;
+}
+.section-five{
+    background-color:#f8f8f8;
+}
+.container-five , .container-six{
+    padding: 20px 0;
+}
+
+/* end noidung */
+
+/* footer */
+footer {
+    color: white;
+    background: #555;
+    height: 480px;
+   padding-top: 30px;
+}
+
+footer img {
+    width: 100%; /* Giữ kích thước ảnh cũ */
+    height: auto; /* Để không bị biến dạng */
+    position: relative;
+    z-index: 1; /* Đặt nó dưới lớp màu xám */
+}
+.logo-1 {
+    width: 100px;
+    height: 70px;
+  padding-right: 10px;
+}
+.footer-wrap {
+    padding-right: 70px;
+}
+.danh-muc {
+    display: flex;
+    padding-top: 10px;
+    
+}
+.footer-wrap ul li {
+    line-height: 1.8; /* Bạn có thể tăng hoặc giảm giá trị này để điều chỉnh giãn dòng */
+}
+#map {
+    height: 370px;
+    width: 600px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    
+}
+.container-footer{
+display: flex;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
